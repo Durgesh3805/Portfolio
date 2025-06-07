@@ -1,0 +1,91 @@
+/* globals.css */
+
+/* Reset some default browser styles */
+
+html { 
+  font-size: 62.5%; 
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+main {
+  padding-top: 2rem /* Adjust based on header height */
+}
+
+@font-face {
+  font-family: 'satoshi';
+  src: url('/fonts/Satoshi-Medium.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Austin';
+  src: url('/fonts/AustinText-ItalicNo2-Trial.otf') format('otf');
+  font-weight: 400;
+  font-style: normal;
+}
+/* Body base styles */
+body {
+  font-family:  satoshi, sans-serif;
+  background-color: #D2D3C3; /* Light neutral background */
+  color: #000000; /* Dark text color */
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* Anchor tags */
+a {
+  color: #3182ce; /* blue link color */
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+a:hover {
+  color: #2c5282; /* darker blue on hover */
+}
+
+/* Headings */
+/* h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: #2d3748;
+} */
+
+/* Paragraphs */
+p {
+  margin-bottom: 1rem;
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Utility classes */
+.container {
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Scrollbar styling (optional) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(50, 50, 50, 0.3);
+  border-radius: 4px;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
