@@ -14,6 +14,12 @@
   background-color: #9DBB81;
   border-radius: 0rem 0rem 4rem 6rem;
   padding: 1.2rem 2.5rem; /* Include a serif font for styling */
+  transition: transform 0.2s ease;
+  transform-origin: left center;
+}
+
+.logo:hover{
+  transform: scaleX(1.05);
 }
 
 .logoLetter {
@@ -40,7 +46,8 @@
   margin: 0 0.2rem;
   font-weight: 600;
   font-size: 1.8rem;
-  cursor: pointer; /* Set font weight */
+  cursor: pointer; 
+  transform-origin: right center;/* Set font weight */
 }
 .item1 {
   background-color: #f5f5eb;
@@ -56,6 +63,11 @@
   padding: 1rem 4rem;
   border-radius: 0 6rem 10rem 0;
 }
+
+.navItem:hover{
+  transform: scale(0.99);
+}
+
 
 /* Specific styles for the 'Contact' button */
 .contact {

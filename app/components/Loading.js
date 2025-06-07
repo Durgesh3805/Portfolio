@@ -10,7 +10,7 @@ export default function Loading() {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#f5f5f5', 
+        backgroundColor: '#D2D3C3', 
       }}
     >
       <BoxLoading color="#528d6f" speed={2} size="largest" style={{ transform: 'scale(2)' }} />
