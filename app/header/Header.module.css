@@ -1,6 +1,4 @@
 /* components/Header.module.css */
-@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&display=swap');
-
 .header {
   margin-left: 3.2%; /* Adds space on the left */
   margin-right: 3.2%; /* Adds space on the right */
