@@ -11,14 +11,14 @@
 .logo {
   font-size: 1.8rem;
   font-family: satoshi, serif;
-  background-color: #9DBB81;
+  background-color: #9dbb81;
   border-radius: 0rem 0rem 4rem 6rem;
   padding: 1.2rem 2.5rem; /* Include a serif font for styling */
   transition: transform 0.2s ease;
   transform-origin: left center;
 }
 
-.logo:hover{
+.logo:hover {
   transform: scaleX(1.05);
 }
 
@@ -28,13 +28,12 @@
   margin: 0 0 0.4rem 0; /* Larger size for the letter */
 }
 
-.Letters{
+.Letters {
   font-family: "Austin", sans-serif;
-
 }
 
 .nav {
-  margin-left: auto; /* Pushes the nav to the right */
+  margin-left: auto;
 }
 
 .navList {
@@ -46,8 +45,8 @@
   margin: 0 0.2rem;
   font-weight: 600;
   font-size: 1.8rem;
-  cursor: pointer; 
-  transform-origin: right center;/* Set font weight */
+  cursor: pointer;
+  transform-origin: right center; /* Set font weight */
 }
 .item1 {
   background-color: #f5f5eb;
@@ -64,17 +63,19 @@
   border-radius: 0 6rem 10rem 0;
 }
 
-.navItem:hover{
+.navItem:hover {
   transform: scale(0.99);
 }
-
 
 /* Specific styles for the 'Contact' button */
 .contact {
   margin-left: 1.6rem;
-  background-color: #f5f5eb;
+  background-color: #9dbb81;
   padding: 1rem 3rem;
   border-radius: 8rem 6rem 10rem 5rem;
+  transition: background-color 0.4s ease;
+  transform-origin: right center;
+  transition: transform 0.4s ease;
 
   /* background-color: #4caf50;
   color: white;
@@ -82,4 +83,56 @@
   padding: 1rem 1.5rem;
   cursor: pointer;
   font-size: 1.8rem; */
+}
+
+.contact:hover {
+  background-color: #f5f5eb;
+  transform: scale(1.02);
+}
+
+.hamburger {
+  display: none; /* default hidden for desktop */
+}
+@media (max-width: 999px) {
+  .item1,
+  .item2,
+  .item3 {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f5eb;
+    border: none;
+    border-radius: 8rem 6rem 10rem 5rem; /* matches your contact button */
+    padding: 1rem 2.5rem;
+    font-size: 2rem;
+    cursor: pointer;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+    margin-left: 1rem;
+    transform-origin: right center;
+    transition: transform 0.4s ease;
+  }
+
+  .hamburgerIcon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 18px;
+  }
+
+  .hamburgerIcon span {
+    background-color: black;
+    height: 2px;
+    width: 24px;
+    margin: 2px 0;
+    border-radius: 4px;
+  }
+
+  .hamburger:hover {
+    transform: scale(1.02);
+  }
+  
 }
