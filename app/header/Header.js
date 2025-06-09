@@ -1,18 +1,14 @@
 'use client';
-import { useState } from 'react';
+
 import styles from './Header.module.css';
 
-const Header = () => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
+export default function Header({ onHamburgerClick, isOpen }) {
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
         <span className={styles.logoLetter}>D</span>
-        <span className={styles.Letters}>urgesh A P</span> 
+        <span className={styles.Letters}>urgesh A P</span>
       </div>
-
-      {/* Desktop Nav */}
       <nav className={styles.nav}>
         <ul className={styles.navList}>
           <li className={`${styles.navItem} ${styles.item1}`}>About</li>
@@ -22,20 +18,18 @@ const Header = () => {
         </ul>
       </nav>
 
-      {/* Mobile: Hamburger Button */}
-      <button className={styles.hamburger} onClick={() => setIsSidebarOpen(true)}>
-        ☰
+      <button
+        className={`${styles.hamburger} ${isOpen ? styles.active : ''}`}
+        onClick={onHamburgerClick}
+        aria-label="Toggle sidebar"
+        aria-expanded={isOpen}
+      >
+        <div className={styles.hamburgerIcon}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </button>
-
-      {/* Mobile: Sidebar Drawer */}
-      {/* <div className={`${styles.sidebar} ${isSidebarOpen ? styles.open : ''}`}>
-        <button className={styles.closeBtn} onClick={() => setIsSidebarOpen(false)}>×</button>
-        <div className={styles.sidebarItem}>About</div>
-        <div className={styles.sidebarItem}>My Values</div>
-        <div className={styles.sidebarItem}>What I Do</div>
-      </div> */}
     </header>
   );
-};
-
-export default Header;
+}

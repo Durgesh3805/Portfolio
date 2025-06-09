@@ -1,6 +1,6 @@
 import "./globals.css";
 import ClientWrapper from "./components/ClientWrapper";
-import Header from "./header/Header";
+import HeaderWrapper from './header/HeaderWrapper';
 
 export const metadata = {
   title: "Durgesh Portfolio",
@@ -33,7 +33,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <ClientWrapper>
-          <Header />
+          <HeaderWrapper/>
           <main className="main-content">
             {children}
           </main>
