@@ -102,6 +102,11 @@
   .item3 {
     display: none;
   }
+    .contact {
+    font-size: 1.2rem;
+  }
+
+
 
   .hamburger {
     display: flex;
