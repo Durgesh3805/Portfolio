@@ -13,7 +13,7 @@ html {
   padding: 0;
 }
 main {
-  padding-top: 2rem /* Adjust based on header height */
+  padding-top: 2rem; /* Adjust based on header height */
 }
 
 @font-face {
@@ -88,4 +88,93 @@ img {
 /* Smooth scroll */
 html {
   scroll-behavior: smooth;
+}
+
+/* About section styles */
+.about {
+  min-height: calc(100vh - 8rem); /* leave space for header */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1rem;
+}
+.about__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 900px;
+}
+.about__image {
+  border-radius: 50%;
+  object-fit: cover;
+  width: min(60vw, 560px);
+  height: auto;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+}
+
+/* Hero layout: large circular image with big overlaid name */
+.hero {
+  padding-top: 4rem; /* leave room for header */
+  padding-bottom: 6rem;
+}
+.hero__inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 72vh;
+}
+.hero__visual {
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero__image {
+  width: min(60vw, 720px);
+  height: auto;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.hero__text {
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+}
+.hero__text h1 {
+  font-family: Austin, serif;
+  font-size: clamp(4.2rem, 9vw, 14rem);
+  line-height: 0.85;
+  color: #0f1412;
+  transform: translateY(-8%);
+  letter-spacing: -0.03em;
+  text-align: center;
+}
+
+/* Wrappers used by the interactive tilt component */
+.hero__visual {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  transition: transform 300ms cubic-bezier(.2,.9,.2,1);
+}
+.hero__image-wrap {
+  display: block;
+  transition: transform 360ms cubic-bezier(.2,.9,.2,1), box-shadow 320ms ease;
+  will-change: transform;
+  transform-origin: 50% 50%;
+}
+.hero__image {
+  display: block;
+  backface-visibility: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__visual,
+  .hero__image-wrap { transition: none !important; transform: none !important; }
+}
+
+@media (max-width: 768px) {
+  .hero__image { width: min(80vw, 460px); }
+  .hero__text h1 { font-size: clamp(3.2rem, 12vw, 6.6rem); }
 }
