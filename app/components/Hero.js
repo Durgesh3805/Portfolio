@@ -24,14 +24,14 @@ export default function Hero() {
     let currentX = 0
     let currentY = 0
 
-    const ease = 0.12
+    const ease = 0.22
 
     function onMove(e) {
       const rect = inner.getBoundingClientRect()
       const clientX = e.touches ? e.touches[0].clientX : e.clientX
       const clientY = e.touches ? e.touches[0].clientY : e.clientY
-      const x = (clientX - rect.left) / rect.width - 0.5 // -0.5..0.5
-      const y = (clientY - rect.top) / rect.height - 0.5
+      const x = (clientX - rect.left) / rect.width - 1 // -0.5..0.5
+      const y = (clientY - rect.top) / rect.height - 1
       // smaller multipliers for subtlety
       targetX = x
       targetY = y
@@ -43,10 +43,10 @@ export default function Hero() {
       currentY += (targetY - currentY) * ease
 
       // subtle rotations and translations
-      const rotateY = currentX * 3 // degrees
+      const rotateY = currentX * 4 // degrees
       const rotateX = -currentY * 3
-      const translateX = currentX * -6 // px
-      const translateY = currentY * -6
+      const translateX = currentX * -1.5 // px
+      const translateY = currentY * -2.5
 
       visual.style.transform = `translate(${translateX}px, ${translateY}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`
       imgWrap.style.transform = `translate(${translateX * 0.35}px, ${translateY * 0.35}px) rotate(${rotateY * 0.05}deg)`
@@ -60,16 +60,31 @@ export default function Hero() {
       if (!rafId) rafId = requestAnimationFrame(animate)
     }
 
+    function preventCopy(e) {
+      e.preventDefault()
+    }
+
+    function preventDragStart(e) {
+      e.preventDefault()
+    }
+
     inner.addEventListener('mousemove', onMove)
     inner.addEventListener('mouseleave', onLeave)
     inner.addEventListener('touchmove', onMove, { passive: true })
     inner.addEventListener('touchend', onLeave)
+    // prevent selection/drag/copy on the hero
+    inner.addEventListener('copy', preventCopy)
+    inner.addEventListener('contextmenu', preventCopy)
+    inner.addEventListener('dragstart', preventDragStart)
 
     return () => {
       inner.removeEventListener('mousemove', onMove)
       inner.removeEventListener('mouseleave', onLeave)
       inner.removeEventListener('touchmove', onMove)
       inner.removeEventListener('touchend', onLeave)
+      inner.removeEventListener('copy', preventCopy)
+      inner.removeEventListener('contextmenu', preventCopy)
+      inner.removeEventListener('dragstart', preventDragStart)
       if (rafId) cancelAnimationFrame(rafId)
     }
   }, [])
@@ -91,10 +106,10 @@ export default function Hero() {
         </div>
 
         <div className="hero__text" aria-hidden>
-          <h1>
-            Durgesh
+          <h1 onCopy={(e)=>e.preventDefault()} onContextMenu={(e)=>e.preventDefault()}>
+            <span className="name-line">Durgesh</span>
             <br />
-            A P
+            <span className="name-line name-line--lower">A P</span>
           </h1>
         </div>
       </div>

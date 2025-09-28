@@ -152,6 +152,20 @@ html {
   text-align: center;
 }
 
+.hero__text h1,
+.hero__text h1 span {
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+.name-line {
+  display: inline-block;
+}
+.name-line--lower {
+  margin-top: 0.6rem; /* extra spacing between lines */
+}
+
 /* Wrappers used by the interactive tilt component */
 .hero__visual {
   transform-style: preserve-3d;
@@ -164,6 +178,7 @@ html {
   will-change: transform;
   transform-origin: 50% 50%;
 }
+.hero__image { -webkit-user-drag: none; }
 .hero__image {
   display: block;
   backface-visibility: hidden;
