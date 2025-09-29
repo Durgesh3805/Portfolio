@@ -1,12 +1,17 @@
 /* components/Header.module.css */
 
 .header {
+  --header-height: 8rem;
   margin-left: 3.2%; /* Adds space on the left */
   margin-right: 3.2%; /* Adds space on the right */
   display: flex;
   align-items: center; /* Center items vertically */
-  height: 8rem; /* Fixed height for the header */
-  /* background-color: rgb(56, 73, 108); */
+  height: var(--header-height); /* Fixed height for the header */
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  /* keep header transparent so the page background shows through; only logo/nav stay sticky */
+  background: transparent;
 }
 
 .logo {

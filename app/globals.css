@@ -13,7 +13,8 @@ html {
   padding: 0;
 }
 main {
-  padding-top: 2rem; /* Adjust based on header height */
+  /* offset for sticky header; matches --header-height defined in header CSS */
+  padding-top: calc(var(--header-height, 8rem));
 }
 
 @font-face {
@@ -115,9 +116,35 @@ html {
 
 /* Hero layout: large circular image with big overlaid name */
 .hero {
-  padding-top: 4rem; /* leave room for header */
-  padding-bottom: 6rem;
+  padding-top: 2rem; /* reduced gap so image sits closer to navbar */
+  padding-bottom: 5rem;
+  position: relative;
 }
+.hero::before,
+.hero::after {
+  content: "";
+  /* make stripes fixed to viewport so they start from the very top */
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: clamp(140px, 18vw, 260px); /* responsive side bands */
+  z-index: 0;
+  pointer-events: none;
+  /* tighter white-ish vertical stripes: 1px line + 32px gap to match reference */
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgba(255,255,255,0.95) 0px,
+    rgba(255,255,255,0.95) 1px,
+    rgba(255,255,255,0.06) 1px,
+    rgba(255,255,255,0.06) 33px
+  );
+}
+.hero::before { left: clamp(40px, 6vw, 96px); }
+.hero::after { right: clamp(40px, 6vw, 96px); }
+
+/* make sure hero content (image and text) sits above the strip layers */
+.hero__visual,
+.hero__text { position: relative; z-index: 2; }
 .hero__inner {
   position: relative;
   display: flex;
@@ -132,7 +159,7 @@ html {
   justify-content: center;
 }
 .hero__image {
-  width: min(60vw, 720px);
+  width: min(52vw, 640px);
   height: auto;
   border-radius: 50%;
   object-fit: cover;
@@ -190,6 +217,6 @@ html {
 }
 
 @media (max-width: 768px) {
-  .hero__image { width: min(80vw, 460px); }
+  .hero__image { width: min(84vw, 420px); }
   .hero__text h1 { font-size: clamp(3.2rem, 12vw, 6.6rem); }
 }
