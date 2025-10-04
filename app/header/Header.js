@@ -14,7 +14,9 @@ export default function Header({ onHamburgerClick, isOpen }) {
           <li className={`${styles.navItem} ${styles.item1}`}>About</li>
           <li className={`${styles.navItem} ${styles.item2}`}>My Values</li>
           <li className={`${styles.navItem} ${styles.item3}`}>What I Do</li>
-          <li className={`${styles.navItem} ${styles.contact}`}>Contact</li>
+          <li className={`${styles.navItem} ${styles.contact} ${isOpen ? styles.contactActive : ''}`}>
+            Contact
+          </li>    
         </ul>
       </nav>
 

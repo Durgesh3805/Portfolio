@@ -86,65 +86,68 @@ img {
   border-radius: 4px;
 }
 
-/* Smooth scroll */
+/* Smooth scrolling (accessible + header-aware)
+   - Only enable smooth behavior when the user hasn't requested reduced motion
+   - Add scroll-padding-top so anchors and `scrollIntoView` don't get hidden
+     under the sticky header
+*/
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Ensure anchored scrolling accounts for the sticky header height. The
+   header defines --header-height; we add a small extra gap so content isn't
+   flush against the header after scroll. */
 html {
-  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-height, 8rem) + 8px);
 }
-
-/* About section styles */
-.about {
-  min-height: calc(100vh - 8rem); /* leave space for header */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 4rem 1rem;
-}
-.about__inner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  max-width: 900px;
-}
-.about__image {
-  border-radius: 50%;
-  object-fit: cover;
-  width: min(60vw, 560px);
-  height: auto;
-  box-shadow: 0 6px 24px rgba(0,0,0,0.12);
-}
-
 /* Hero layout: large circular image with big overlaid name */
 .hero {
-  padding-top: 2rem; /* reduced gap so image sits closer to navbar */
+  padding-top: 2rem;
   padding-bottom: 5rem;
-  position: relative;
+  position: relative; /* This is still needed for child z-index to work */
 }
-.hero::before,
-.hero::after {
-  content: "";
-  /* make stripes fixed to viewport so they start from the very top */
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  width: clamp(140px, 18vw, 260px); /* responsive side bands */
-  z-index: 0;
-  pointer-events: none;
-  /* tighter white-ish vertical stripes: 1px line + 32px gap to match reference */
-  background-image: repeating-linear-gradient(
-    90deg,
-    rgba(255,255,255,0.95) 0px,
-    rgba(255,255,255,0.95) 1px,
-    rgba(255,255,255,0.06) 1px,
-    rgba(255,255,255,0.06) 33px
-  );
+
+/* --- Media Query for the Stripes --- */
+/* Only apply the stripes on screens 768px and wider */
+@media (min-width: 768px) {
+  .hero::before,
+  .hero::after {
+    content: "";
+    /* make stripes fixed to viewport so they start from the very top */
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: clamp(140px, 18vw, 260px); /* responsive side bands */
+    z-index: 0;
+    pointer-events: none;
+    /* tighter white-ish vertical stripes: 1px line + 32px gap to match reference */
+    background-image: repeating-linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.95) 0px,
+      rgba(255, 255, 255, 0.95) 1px,
+      rgba(255, 255, 255, 0.06) 1px,
+      rgba(255, 255, 255, 0.06) 33px
+    );
+  }
+
+  .hero::before {
+    left: clamp(40px, 6vw, 96px);
+  }
+  .hero::after {
+    right: clamp(40px, 6vw, 96px);
+  }
 }
-.hero::before { left: clamp(40px, 6vw, 96px); }
-.hero::after { right: clamp(40px, 6vw, 96px); }
 
 /* make sure hero content (image and text) sits above the strip layers */
 .hero__visual,
-.hero__text { position: relative; z-index: 2; }
+.hero__text {
+  position: relative;
+  z-index: 2;
+}
+
 .hero__inner {
   position: relative;
   display: flex;
@@ -152,39 +155,8 @@ html {
   justify-content: center;
   min-height: 72vh;
 }
-.hero__visual {
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.hero__image {
-  width: min(52vw, 640px);
-  height: auto;
-  border-radius: 50%;
-  object-fit: cover;
-}
-.hero__text {
-  position: absolute;
-  z-index: 2;
-  pointer-events: none;
-}
-.hero__text h1 {
-  font-family: Austin, serif;
-  font-size: clamp(4.2rem, 9vw, 14rem);
-  line-height: 0.85;
-  color: #0f1412;
-  transform: translateY(-8%);
-  letter-spacing: -0.03em;
-  text-align: center;
-}
 
-.hero__text h1,
-.hero__text h1 span {
-  user-select: none;
-  -webkit-user-select: none;
-  -webkit-touch-callout: none;
-}
+/* --- The rest of your styles are fine --- */
 
 .name-line {
   display: inline-block;
@@ -193,30 +165,19 @@ html {
   margin-top: 0.6rem; /* extra spacing between lines */
 }
 
-/* Wrappers used by the interactive tilt component */
-.hero__visual {
-  transform-style: preserve-3d;
-  backface-visibility: hidden;
-  transition: transform 300ms cubic-bezier(.2,.9,.2,1);
-}
-.hero__image-wrap {
-  display: block;
-  transition: transform 360ms cubic-bezier(.2,.9,.2,1), box-shadow 320ms ease;
-  will-change: transform;
-  transform-origin: 50% 50%;
-}
-.hero__image { -webkit-user-drag: none; }
-.hero__image {
-  display: block;
-  backface-visibility: hidden;
-}
-
 @media (prefers-reduced-motion: reduce) {
   .hero__visual,
-  .hero__image-wrap { transition: none !important; transform: none !important; }
+  .hero__image-wrap {
+    transition: none !important;
+    transform: none !important;
+  }
 }
 
 @media (max-width: 768px) {
-  .hero__image { width: min(84vw, 420px); }
-  .hero__text h1 { font-size: clamp(3.2rem, 12vw, 6.6rem); }
+  .hero__image {
+    width: min(84vw, 420px);
+  }
+  .hero__text h1 {
+    font-size: clamp(3.2rem, 12vw, 6.6rem);
+  }
 }
