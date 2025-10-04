@@ -233,3 +233,13 @@
   }
   
 }
+@media (max-width: 768px) {
+  .header {
+    --header-height: 6rem; /* Reduces height to 96px on smaller screens */
+  }
+
+  .logo {
+    padding: 0.8rem 1.8rem; /* Adjust padding to match new height */
+    font-size: 1.5rem;
+  }
+}

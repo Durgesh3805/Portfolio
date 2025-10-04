@@ -12,8 +12,7 @@ html {
   margin: 0;
   padding: 0;
 }
-main {
-  /* offset for sticky header; matches --header-height defined in header CSS */
+main > :not(:first-child) {
   padding-top: calc(var(--header-height, 8rem));
 }
 
