@@ -9,7 +9,6 @@ export default function Sidebar({ visible, onClose }) {
         <li onClick={onClose}>About</li>
         <li onClick={onClose}>My Values</li>
         <li onClick={onClose}>What I Do</li>
-        <li onClick={onClose}>Contact</li>
       </ul>
     </div>
   );
