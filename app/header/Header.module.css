@@ -14,6 +14,7 @@
   background: transparent;
 }
 
+
 .logo {
   font-size: 1.8rem;
   font-family: satoshi, serif;
@@ -48,11 +49,18 @@
 }
 
 .navItem {
+  /* ADDED: Makes the <a> tag behave like a block for styling */
+  display: inline-block;
+  /* ADDED: Removes the default blue link color */
+  color: inherit;
+  /* ADDED: Removes the default underline from the link */
+  text-decoration: none;
+
   margin: 0 0.2rem;
   font-weight: 600;
   font-size: 1.8rem;
   cursor: pointer;
-  transform-origin: right center; /* Set font weight */
+  transform-origin: right center;
 }
 .item1 {
   background-color: #f5f5eb;
@@ -72,7 +80,18 @@
 .navItem:hover {
   transform: scale(0.99);
 }
+a.navItem:not(.contact):hover {
+  background-color: #9dbb81; /* The site's accent green */
+  color: #f5f5eb;            /* The creamy off-white color */
+  transform: scale(1.02);     /* A slight grow effect on hover */
+  transition: all 0.5s ease;
+}
 
+/* Your existing .contact:hover rule is already perfect for the contact button. */
+.contact:hover {
+  background-color: #f5f5eb;
+  transform: scale(1.02);
+}
 /* Specific styles for the 'Contact' button */
 .contact {
   margin-left: 1.6rem;
@@ -234,6 +253,10 @@
 
  
   
+}
+.sidebarMenu a {
+  color: inherit;
+  text-decoration: none;
 }
 @media (max-width: 768px) {
   .header {

@@ -37,7 +37,7 @@ export default function About() {
   }
 
   return (
-    <section className={styles.aboutPage}>
+    <section id="about" className={styles.aboutPage}>
       {/* --- ABOUT SECTION (from your first file) --- */}
       <div className={styles.sectionContainer}>
         <div className={styles.headingColumn}>

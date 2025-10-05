@@ -11,14 +11,30 @@ export default function Header({ onHamburgerClick, isOpen }) {
       </div>
       <nav className={styles.nav}>
         <ul className={styles.navList}>
-          <li className={`${styles.navItem} ${styles.item1}`}>About</li>
-          <li className={`${styles.navItem} ${styles.item2}`}>My Values</li>
-          <li className={`${styles.navItem} ${styles.item3}`}>What I Do</li>
-          <li className={`${styles.navItem} ${styles.contact} ${isOpen ? styles.contactActive : ''}`}>
-            Contact
-          </li>    
+          {/* We've nested the <a> tag and moved the classes to it */}
+          <li>
+            <a href="#about" className={`${styles.navItem} ${styles.item1}`}>
+              About
+            </a>
+          </li>
+          <li>
+            <a href="#values" className={`${styles.navItem} ${styles.item2}`}>
+              My Values
+            </a>
+          </li>
+          <li>
+            <a href="#what-i-do" className={`${styles.navItem} ${styles.item3}`}>
+              What I Do
+            </a>
+          </li>
+          <li>
+            <a href="#contact" className={`${styles.navItem} ${styles.contact} ${isOpen ? styles.contactActive : ''}`}>
+              Contact
+            </a>
+          </li>
         </ul>
       </nav>
+
 
       <button
         className={`${styles.hamburger} ${isOpen ? styles.active : ''}`}
