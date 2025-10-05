@@ -2,8 +2,8 @@
 
 /* Reset some default browser styles */
 
-html { 
-  font-size: 62.5%; 
+html {
+  font-size: 62.5%;
 }
 *,
 *::before,
@@ -11,9 +11,6 @@ html {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-main > :not(:first-child) {
-  padding-top: calc(var(--header-height, 8rem));
 }
 
 @font-face {
@@ -29,6 +26,7 @@ main > :not(:first-child) {
   font-weight: 400;
   font-style: normal;
 }
+
 /* Body base styles */
 body {
   font-family:  satoshi, sans-serif;
@@ -40,21 +38,13 @@ body {
 
 /* Anchor tags */
 a {
-  color: #3182ce; /* blue link color */
+  color: #3182ce;
   text-decoration: none;
   transition: color 0.2s ease;
 }
 a:hover {
-  color: #2c5282; /* darker blue on hover */
+  color: #2c5282;
 }
-
-/* Headings */
-/* h1, h2, h3, h4, h5, h6 {
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 1rem;
-  color: #2d3748;
-} */
 
 /* Paragraphs */
 p {
@@ -85,44 +75,29 @@ img {
   border-radius: 4px;
 }
 
-/* Smooth scrolling (accessible + header-aware)
-   - Only enable smooth behavior when the user hasn't requested reduced motion
-   - Add scroll-padding-top so anchors and `scrollIntoView` don't get hidden
-     under the sticky header
-*/
+/* Smooth scrolling */
 @media (prefers-reduced-motion: no-preference) {
   html {
     scroll-behavior: smooth;
   }
 }
 
-/* Ensure anchored scrolling accounts for the sticky header height. The
-   header defines --header-height; we add a small extra gap so content isn't
-   flush against the header after scroll. */
 html {
   scroll-padding-top: calc(var(--header-height, 8rem) + 8px);
 }
-/* Hero layout: large circular image with big overlaid name */
-.hero {
-  padding-top: 2rem;
-  padding-bottom: 5rem;
-  position: relative; /* This is still needed for child z-index to work */
-}
 
 /* --- Media Query for the Stripes --- */
-/* Only apply the stripes on screens 768px and wider */
+/* Only apply the stripes and fixed height on screens 768px and wider */
 @media (min-width: 768px) {
   .hero::before,
   .hero::after {
     content: "";
-    /* make stripes fixed to viewport so they start from the very top */
     position: fixed;
     top: 0;
     bottom: 0;
-    width: clamp(140px, 18vw, 260px); /* responsive side bands */
+    width: clamp(140px, 18vw, 260px);
     z-index: 0;
     pointer-events: none;
-    /* tighter white-ish vertical stripes: 1px line + 32px gap to match reference */
     background-image: repeating-linear-gradient(
       90deg,
       rgba(255, 255, 255, 0.95) 0px,
@@ -138,6 +113,11 @@ html {
   .hero::after {
     right: clamp(40px, 6vw, 96px);
   }
+
+  /* THIS IS THE KEY CHANGE: min-height is now only for desktop */
+  .hero__inner {
+    min-height: 72vh;
+  }
 }
 
 /* make sure hero content (image and text) sits above the strip layers */
@@ -147,21 +127,19 @@ html {
   z-index: 2;
 }
 
+/* This rule no longer contains min-height */
 .hero__inner {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 72vh;
 }
-
-/* --- The rest of your styles are fine --- */
 
 .name-line {
   display: inline-block;
 }
 .name-line--lower {
-  margin-top: 0.6rem; /* extra spacing between lines */
+  margin-top: 0.6rem;
 }
 
 @media (prefers-reduced-motion: reduce) {

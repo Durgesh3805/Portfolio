@@ -73,7 +73,10 @@ export default function Hero() {
           <button className={styles.secondaryButton}>Explore the Builds</button>
         </div>
         
-        <div className={styles.scrollIndicator}>
+        <div 
+          className={`${styles.scrollIndicator} ${styles.hidden} ${styles.delay4}`}
+          ref={(el) => animatedOnScrollRef.current[3] = el}
+        >
           <p>Scroll to explore</p>
           <span className={styles.arrowDown}></span>
         </div>

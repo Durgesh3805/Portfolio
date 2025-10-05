@@ -1,0 +1,97 @@
+/* File: app/components/about/About.module.css */
+
+.aboutPage {
+  padding: 0 10% 10rem;
+  max-width: 160rem;
+}
+
+.sectionContainer {
+  display: grid;
+  grid-template-columns: 2fr 3fr; /* 40% / 60% split */
+  gap: 4rem;
+  margin-bottom: 10rem;
+}
+
+.subheading {
+  font-size: 0.8rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem; /* Converted from 2px */
+  margin-bottom: 1rem;
+}
+
+.mainHeading {
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  line-height: 1.2;
+  font-weight: 600;
+  color: #111;
+}
+
+.description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+/* --- Skills Section Specifics --- */
+.skillCategory h3 {
+  font-weight: 500;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.skillCategory {
+  margin-bottom: 2rem;
+}
+
+.skillsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.skillPill {
+  padding: 0.5rem 1rem;
+  border-radius: 0.6rem; /* Converted from 6px */
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: 0.1rem solid transparent; /* Converted from 1px */
+}
+
+/* Skill Pill Colors */
+.blue {
+  background-color: #e0f2fe; /* light blue */
+  border-color: #bae6fd;
+  color: #0369a1;
+}
+
+.green {
+  background-color: #dcfce7; /* light green */
+  border-color: #bbf7d0;
+  color: #166534;
+}
+
+.purple {
+  background-color: #f3e8ff; /* light purple */
+  border-color: #e9d5ff;
+  color: #6b21a8;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 80rem) { /* Converted from 800px */
+  .aboutPage {
+    padding: 2rem 5% 8rem; /* Converted from 80px */
+  }
+
+  .sectionContainer {
+    grid-template-columns: 1fr; /* Stack columns on smaller screens */
+    gap: 2rem;
+    margin-bottom: 8rem; /* Converted from 80px */
+  }
+
+  .mainHeading {
+    font-size: 2.2rem;
+  }
+}
