@@ -17,9 +17,13 @@
   width: 100%;
   padding-bottom: 5rem; /* Add some space at the bottom */
   padding-top: calc(var(--header-height, 8rem));
+  user-select: none; /* Standard syntax */
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
 }
 
-/* --- Base Animation Styles --- */
+/* --- Base Scroll Animation Styles --- */
 .hidden {
   opacity: 0;
   transform: translateY(20px);
@@ -31,18 +35,43 @@
   transform: translateY(0);
 }
 
-/* --- Staggered Delay Classes --- */
-.delay1 { transition-delay: 200ms; }
-.delay2 { transition-delay: 300ms; }
-.delay3 { transition-delay: 400ms; }
-.delay4 { transition-delay: 500ms; }
+/* --- Staggered Delay Classes (for scroll) --- */
+.delay2 { transition-delay: 200ms; }
+.delay3 { transition-delay: 300ms; }
+.delay4 { transition-delay: 400ms; }
 
 
 .subtitle {
   font-size: 1.2rem;
-  font-weight: 500;
-  color: #000; /* Slightly lighter than main text */
+  font-weight: 700;
+  color: #000;
   margin-bottom: 1.5rem;
+  /* Monospaced font for a better typewriter feel */
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* --- Typewriter Animation --- */
+.typewriter {
+  display: inline-block;
+  overflow: hidden; 
+  border-right: .15em solid #9dbb81; /* The typewriter cursor */
+  white-space: nowrap;
+  letter-spacing: .1em;
+  animation: 
+    typing 4s steps(29, end),
+    blink-caret .75s step-end infinite;
+}
+
+/* The typing effect keyframe */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect keyframe */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #9dbb81; }
 }
 
 .mainHeading {
@@ -73,7 +102,7 @@
   border-radius: 0.5rem;
   font-size: 1.2rem; 
   cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, border-color 0.3s ease;
   font-weight: 500;
 }
 
@@ -143,7 +172,6 @@
 @media (max-width: 768px) {
   .hero {
     padding: 0 10%;
-    
   }
   .heroInner {
     padding-bottom: 3rem;
@@ -155,17 +183,21 @@
   .description {
     font-size: 1.3rem;
     max-width: 95%; /* Allow description to take more width */
-    
   }
   .buttonsContainer {
+    
     flex-direction: column; /* Stack buttons vertically */
     gap: 1rem;
-    width: fit-content; /* Make container fit content for centering */
+    width: fit-content;
+    align-items: center;
+    text-align: center;/* Make container fit content for centering */
   }
   .primaryButton,
   .secondaryButton {
-    width: 200px; /* Fixed width for stacked buttons */
+    width: 190px;
+    justify-content: center /* Fixed width for stacked buttons */
   }
+  
   .scrollIndicator {
     display: none; /* Hide scroll indicator on very small screens */
   }
@@ -179,3 +211,4 @@
     font-size: 0.9rem;
   }
 }
+
