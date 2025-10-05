@@ -5,7 +5,7 @@
   justify-content: flex-start;
   align-items: flex-start;
   color: #000;
-  padding: 0 5%;
+  padding: 0 5rem;
   padding-left: 15%;
   box-sizing: border-box;
   overflow-x: hidden;
@@ -16,7 +16,7 @@
   max-width: 1600px;
   width: 100%;
   padding-bottom: 3rem;
-  padding-top: calc(var(--header-height, 8rem));
+  padding-top: calc(var(--header-height, 6rem));
   user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -80,7 +80,7 @@
   font-size: 1.3rem;
   line-height: 1.6;
   color: #373434;
-  max-width: 700px;
+  max-width: 700ch;
   margin-bottom: 3.5rem;
 }
 
@@ -194,18 +194,21 @@
 /* --- Responsive Adjustments --- */
 @media (max-width: 768px) {
   .hero {
-    padding: 0 10%;
+    padding: 0 8%;
   }
   .heroInner {
     padding-bottom: 0rem;
+    padding-top: calc(var(--header-height, 4rem));
   }
   .mainHeading {
     font-size: 3rem;
     line-height: 1.4;
+    text-align: justify;
   }
   .description {
     font-size: 1.3rem;
-    max-width: 95%;
+    max-width: 93%;
+    text-align: justify;
   }
   .buttonsContainer {
     flex-direction: column;
@@ -222,7 +225,7 @@
   .scrollIndicator{
     font-size: 1rem;
     left: 12%;
-    bottom: 2.5rem;
+    bottom: 2rem;
     
   }
   
