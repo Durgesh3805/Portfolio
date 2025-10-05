@@ -1,0 +1,71 @@
+/* /components/ProjectsSection.module.css */
+
+.projectsSection {
+  padding-top: 0;
+  padding-right: 5rem;
+  padding-bottom: 0;
+  padding-left: 5rem;
+ /* Adjust padding as needed */
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 3rem;
+  
+}
+
+.subtitle {
+    font-size: 1.5rem;
+  font-weight: 620;
+  color: #000;
+  margin-bottom: 1rem;
+  font-family: 'Courier New', Courier, monospace;
+  letter-spacing: 0.5rem;
+}
+
+.title {
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+  line-height: 1.2;
+  font-weight: 600;
+  color: #111;
+}
+
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2-column grid */
+  gap: 2rem;
+}
+
+/* Make the grid 1 column on smaller screens */
+@media (max-width: 768px) {
+  .projectsGrid {
+    grid-template-columns: 1fr;
+
+  }
+  .projectsSection {
+  padding-top: 0;
+  padding-right: 2rem;
+  padding-bottom: 0;
+  padding-left: 2rem;
+
+}
+}
+@media (min-width: 1600px) {
+  .projectsSection {
+    /* Optionally increase the max-width for very wide screens */
+    max-width: 1800px; 
+  }
+  .projectsSection {
+  padding-top: 0;
+  padding-right: 20rem;
+  padding-bottom: 0;
+  padding-left: 20rem;
+
+}
+  
+  .projectsGrid {
+    /* Switch to a 3-column grid */
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
