@@ -44,7 +44,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className={styles.hero}>
+    <section id="main" className={styles.hero}>
       <div className={styles.heroInner}>
         <p className={`${styles.subtitle} ${styles.typewriter}`}>
           TURNING CAFFEINE INTO CODE...

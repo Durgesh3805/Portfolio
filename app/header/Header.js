@@ -1,43 +1,47 @@
-'use client';
-
-import styles from './Header.module.css';
+"use client";
+import Link from "next/link";
+import styles from "./Header.module.css";
 
 export default function Header({ onHamburgerClick, isOpen }) {
   return (
     <header className={styles.header}>
+      <Link href="/" className={styles.logoLink}>
       <div className={styles.logo}>
         <span className={styles.logoLetter}>D</span>
         <span className={styles.Letters}>urgesh A P</span>
       </div>
+       </Link>
       <nav className={styles.nav}>
         <ul className={styles.navList}>
           {/* We've nested the <a> tag and moved the classes to it */}
           <li>
-            <a href="#about" className={`${styles.navItem} ${styles.item1}`}>
+            <Link href="/#about" className={`${styles.navItem} ${styles.item1}`}>
               About
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#values" className={`${styles.navItem} ${styles.item2}`}>
-              My Values
-            </a>
+            <Link href="/#skills" className={`${styles.navItem} ${styles.item2}`}>
+              Skills
+            </Link>
           </li>
           <li>
-            <a href="#what-i-do" className={`${styles.navItem} ${styles.item3}`}>
-              What I Do
-            </a>
+           <Link href="/#projects" className={`${styles.navItem} ${styles.item3}`}>
+              Projects
+            </Link>
           </li>
           <li>
-            <a href="#contact" className={`${styles.navItem} ${styles.contact} ${isOpen ? styles.contactActive : ''}`}>
+            <Link
+              href="/contact"
+              className={`${styles.navItem} ${styles.contact} ${isOpen ? styles.contactActive : ""}`}
+            >
               Contact
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>
 
-
       <button
-        className={`${styles.hamburger} ${isOpen ? styles.active : ''}`}
+        className={`${styles.hamburger} ${isOpen ? styles.active : ""}`}
         onClick={onHamburgerClick}
         aria-label="Toggle sidebar"
         aria-expanded={isOpen}

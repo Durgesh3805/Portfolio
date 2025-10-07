@@ -23,7 +23,7 @@ export default function ProjectCard({ title, description, image, tags, link, spa
 
   return (
     <a href={link} target="_blank" rel="noopener noreferrer" className={cardClass}>
-      <div className={styles.imageContainer}>
+      <div id="projects"className={styles.imageContainer}>
         <Image
           src={image}
           alt={`${title} screenshot`}

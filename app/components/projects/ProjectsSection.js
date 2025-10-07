@@ -2,11 +2,11 @@
 // This is the corrected data
 export const projects = [
   {
-    title: 'Kleats — Online Food Pre-ordering Platform',
-    description: 'Collaborative FOSS project...',
-    image: '/images/kleats-project.png',
-    tags: ['React', 'Node.js', 'MongoDB', 'FOSS'],
-    link: '#',
+    title: 'Optimizing Drone Truck Delivery: An ALNS Algorithm Approach for Environmental and Economic Efficiency in Last-Mile Logistics',
+    description: ' framework for a sustainable drone-truck logistics system tailored to the Indian context',
+    image: '/imgs/Project1.png',
+    tags: ['Python', 'PyQt5', 'ALNS', 'Artificial Intelligence'],
+    link: 'https://github.com/TriSpraks/drone_truck_delivery_system.git',
   },
   {
     title: 'Typing Speed Test Platform (typ.ly)',

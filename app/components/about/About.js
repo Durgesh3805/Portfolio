@@ -57,7 +57,7 @@ export default function About() {
       </div>
 
       {/* --- DYNAMIC SKILLS SECTION (from your second file) --- */}
-      <div className={styles.sectionContainer}>
+      <div id="skills"className={styles.sectionContainer}>
         <div className={styles.headingColumn}>
           <p className={styles.subheading}>SKILLS</p>
           <h2 className={styles.mainHeading}>Technologies & expertise</h2>

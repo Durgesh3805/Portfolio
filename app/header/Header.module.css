@@ -13,7 +13,15 @@
   /* keep header transparent so the page background shows through; only logo/nav stay sticky */
   background: transparent;
 }
+.logoLink{
+  text-decoration: none;
+  color:#000;
+}
 
+.logoLink:hover{
+  text-decoration: none;
+  color: #000;
+}
 
 .logo {
   font-size: 1.8rem;
@@ -88,10 +96,7 @@ a.navItem:not(.contact):hover {
 }
 
 /* Your existing .contact:hover rule is already perfect for the contact button. */
-.contact:hover {
-  background-color: #f5f5eb;
-  transform: scale(1.02);
-}
+
 /* Specific styles for the 'Contact' button */
 .contact {
   margin-left: 1.6rem;
@@ -114,6 +119,7 @@ a.navItem:not(.contact):hover {
 
 .contact:hover {
   background-color: #f5f5eb;
+  color: #000;
   transform: scale(1.02);
 }
 
