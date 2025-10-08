@@ -4,7 +4,7 @@ export const projects = [
   {
     title: 'Optimizing Drone Truck Delivery: An ALNS Algorithm Approach for Environmental and Economic Efficiency in Last-Mile Logistics',
     description: ' framework for a sustainable drone-truck logistics system tailored to the Indian context',
-    image: '/imgs/Project1.png',
+    image: '/imgs/Project1.webp',
     tags: ['Python', 'PyQt5', 'ALNS', 'Artificial Intelligence'],
     link: 'https://github.com/TriSpraks/drone_truck_delivery_system.git',
   },

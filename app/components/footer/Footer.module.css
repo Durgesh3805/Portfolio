@@ -1,0 +1,74 @@
+/* Styles for the simple Footer component */
+.footer {
+  width: 100%;
+  border-top: 1px solid var(--border-light, #E5E7EB);
+  margin-top: 4rem; /* 64px */
+  background-color: var(--background-light, #FFFFFF);
+}
+
+.container {
+  max-width: 80rem; /* 1280px */
+  margin: 0 auto;
+  padding: 1.25rem 1.5rem; 
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem; 
+}
+
+.copyright {
+  font-size: 1rem; 
+  color: var(--text-secondary-light, #6B7280);
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem; 
+}
+
+.socialLink {
+  color: var(--text-secondary-light, #6B7280);
+  /* --- CHANGED: Added 'transform' to the transition for a smooth scaling effect --- */
+  transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
+  display: inline-block; /* Helps transforms behave predictably */
+}
+
+.socialLink:hover {
+  color: var(--text-primary-light, #111827);
+  /* --- CHANGED: Added the scale transform on hover --- */
+  transform: scale(1.2);
+}
+
+.socialIcon {
+  height: 1.5rem; 
+  width: 1.5rem; 
+}
+
+/* On screens larger than 640px, push content to opposite ends */
+@media (min-width: 640px) {
+  .container {
+    justify-content: space-between;
+  }
+}
+
+/* Dark Mode Styles */
+@media (prefers-color-scheme: dark) {
+  .footer {
+    background-color: var(--background-dark, #9dbb81);
+  }
+  .copyright {
+    color: var(--text-secondary-dark, #000000);
+  }
+  .socialLink {
+    /* --- CHANGED: Updated to your specified dark mode color --- */
+    color: var(--text-secondary-dark, #232528);
+  }
+  .socialLink:hover {
+    /* --- CHANGED: Updated to your specified dark mode hover color --- */
+    color: var(--text-primary-dark, #000);
+    /* The transform: scale(1.2) from the base hover rule will also apply here */
+  }
+}
+
