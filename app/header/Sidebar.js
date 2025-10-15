@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link'; // Import Link for Next.js routing
 import styles from './Header.module.css';
 
 export default function Sidebar({ visible, onClose }) {
@@ -7,16 +8,24 @@ export default function Sidebar({ visible, onClose }) {
     <div className={`${styles.sidebar} ${visible ? styles.show : ''}`}>
       <ul className={styles.sidebarMenu}>
         <li>
-          <a href="#about" onClick={onClose}>About</a>
+          {/* Link to About section on the home page */}
+          <Link href="/#about" onClick={onClose} className={styles.navItem}>
+            About
+          </Link>
         </li>
         <li>
-          {/* Assuming you have a section with id="values" */}
-          <a href="#values" onClick={onClose}>My Values</a>
+          {/* Link to Skills section on the home page */}
+          <Link href="/#skills" onClick={onClose} className={styles.navItem}>
+            Skills
+          </Link>
         </li>
         <li>
-          {/* Assuming you have a section with id="what-i-do" */}
-          <a href="#what-i-do" onClick={onClose}>What I Do</a>
+          {/* Link to Projects section on the home page */}
+          <Link href="/#projects" onClick={onClose} className={styles.navItem}>
+            Projects
+          </Link>
         </li>
+      
       </ul>
     </div>
   );
