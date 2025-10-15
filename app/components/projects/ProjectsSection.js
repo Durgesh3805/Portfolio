@@ -11,22 +11,22 @@ export const projects = [
   {
     title: 'Typing Speed Test Platform (typ.ly)',
     description: 'Aesthetic and interactive typing speed test...',
-    image: '/images/typly-project.png',
+    image: '/imgs/Project2.png',
     tags: ['Next.js', 'React', 'TypeScript', 'WebSocket'],
     link: '#',
   },
   {
-    title: 'Another Project', // It's best to have a unique title
-    description: 'This will now fit into the first column of the next row.',
-    image: '/images/another-project.png',
+    title: 'Hub Spot Website', // It's best to have a unique title
+    description: 'Build and manage your HubSpot tech',
+    image: '/imgs/Project3.png',
     tags: ['React', 'CSS'],
     link: '#',
     // The `spanFull` property is removed or set to false
   },
   {
-    title: 'Another Project', // It's best to have a unique title
-    description: 'This will now fit into the first column of the next row.',
-    image: '/images/another-project.png',
+    title: 'Blog website', // It's best to have a unique title
+    description: 'Website for Blog management',
+    image: '/imgs/Project4.png',
     tags: ['React', 'CSS'],
     link: '#',
     // The `spanFull` property is removed or set to false
