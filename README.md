@@ -1,6 +1,6 @@
 <div align="center">
 
-# Personal portfolio
+# Portfolio Website
 
 ### [Durgesh3805](https://portfolio-five-dun-72.vercel.app)
 
