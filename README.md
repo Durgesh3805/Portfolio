@@ -7,8 +7,7 @@
 <img src="public/imgs/portfolio.png" alt="Portfolio Preview" width="600"/>
 
 <br>
-
-A modern personal portfolio website that highlights my work, technical expertise, and creative journey through an elegant, user-friendly interface.
+My design portfolio to showcase a few projects that highlights my work, technical expertise, and creative journey through an elegant, user-friendly interface.
 
 ## 🚀 Live Demo
 
