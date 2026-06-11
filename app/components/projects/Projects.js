@@ -28,6 +28,7 @@ export default function ProjectCard({ title, description, image, tags, link, spa
           src={image}
           alt={`${title} screenshot`}
           fill
+          sizes={spanFull ? '100vw' : '(max-width: 768px) 100vw, 50vw'}
           style={{ objectFit: 'cover' }}
           className={styles.projectImage}
         />
