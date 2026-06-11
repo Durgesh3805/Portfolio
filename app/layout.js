@@ -91,8 +91,7 @@ export const metadata = {
   },
 
   verification: {
-    // Add your Google Search Console verification token here when available
-    // google: "your-verification-token",
+    google: "google0609c89dd1e959f9",
   },
 };
 
