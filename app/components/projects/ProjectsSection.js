@@ -1,38 +1,39 @@
 // /components/ProjectsSection.js
-// This is the corrected data
 export const projects = [
   {
-    title: 'Optimizing Drone Truck Delivery: An ALNS Algorithm Approach for Environmental and Economic Efficiency in Last-Mile Logistics',
-    description: ' framework for a sustainable drone-truck logistics system tailored to the Indian context',
-    image: '/imgs/Project1.webp',
-    tags: ['Python', 'PyQt5', 'ALNS', 'Artificial Intelligence'],
+    title: 'Multimodal Ore Identification using Deep Learning',
+    description:
+      'A hybrid multimodal AI system fusing RGB, infrared, acoustic, and capacitive sensor data to classify 5 mineral types non-destructively. Built with an ensemble CNN + Vision Transformer, fuzzy logic uncertainty layer, and a real-time Next.js dashboard deployed via Raspberry Pi edge-to-cloud pipeline.',
+    image: '/imgs/project_ore.png',
+    tags: ['Python', 'TensorFlow', 'Next.js', 'Raspberry Pi'],
+    link: '#',
+  },
+  {
+    title: 'Mayonix — Corporate Website (Internship)',
+    description:
+      'Full-stack corporate website built at Mayonix Software Solutions with Next.js 15, TypeScript, and Strapi CMS v5 in a decoupled monorepo. Features SSR/ISR, Upstash Redis caching (~95% faster API responses), 25+ reusable components, dynamic blog, careers module, and full SEO infrastructure.',
+    image: '/imgs/project_mayonix.png',
+    tags: ['Next.js', 'TypeScript', 'Strapi CMS', 'PostgreSQL', 'Redis'],
+    link: 'https://mayonix.com',
+  },
+  {
+    title: 'Optimizing Drone–Truck Delivery using ALNS',
+    description:
+      'Full-stack simulation platform using Adaptive Large Neighborhood Search (ALNS) for last-mile logistics with heterogeneous fleets of fuel trucks, electric trucks, and drones. Achieved 21.1% mean optimization improvement on datasets up to 500 customers.',
+    image: '/imgs/project_alns.png',
+    tags: ['Python', 'FastAPI', 'PyQt5', 'ALNS'],
     link: 'https://github.com/TriSpraks/drone_truck_delivery_system.git',
   },
   {
-    title: 'Typing Speed Test Platform (typ.ly)',
-    description: 'Aesthetic and interactive typing speed test...',
-    image: '/imgs/Project2.png',
-    tags: ['Next.js', 'React', 'TypeScript', 'WebSocket'],
+    title: 'Automated Job Discovery in CareerTech',
+    description:
+      'An automated job aggregation platform that extracts, parses, and intelligently filters real-time postings from dynamic career sites using Scrapy and Selenium pipelines, with a Next.js frontend and PostgreSQL backend.',
+    image: '/imgs/project_jobs.png',
+    tags: ['Next.js', 'Python', 'PostgreSQL'],
     link: '#',
   },
-  {
-    title: 'Hub Spot Website', // It's best to have a unique title
-    description: 'Build and manage your HubSpot tech',
-    image: '/imgs/Project3.png',
-    tags: ['React', 'CSS'],
-    link: '#',
-    // The `spanFull` property is removed or set to false
-  },
-  {
-    title: 'Blog website', // It's best to have a unique title
-    description: 'Website for Blog management',
-    image: '/imgs/Project4.png',
-    tags: ['React', 'CSS'],
-    link: '#',
-    // The `spanFull` property is removed or set to false
-  },
-   
 ];
+
 import ProjectCard from './Projects';
 import styles from './ProjectsSection.module.css';
 
@@ -41,7 +42,7 @@ export default function ProjectsSection() {
     <section className={styles.projectsSection}>
       <div className={styles.header}>
         <p className={styles.subtitle}>SELECTED WORK</p>
-        <h2 className={styles.title}>Recent projects</h2>
+        <h2 className={styles.title}>Recent Projects</h2>
       </div>
       <div className={styles.projectsGrid}>
         {projects.map((project) => (
@@ -50,4 +51,4 @@ export default function ProjectsSection() {
       </div>
     </section>
   );
-}
+}

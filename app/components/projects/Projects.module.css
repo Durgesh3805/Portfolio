@@ -21,8 +21,13 @@
 .imageContainer {
   position: relative;
   width: 100%;
-  padding-top: 60%; /* Aspect ratio for the image */
+  padding-top: 38%;
   background-color: #D2D3C3;
+}
+
+/* Much shorter image for the full-width featured card */
+.imageContainerFeatured {
+  padding-top: 22%;
 }
 
 .projectImage {
@@ -34,19 +39,25 @@
 }
 
 .content {
-  padding: 1.5rem;
+  padding: 1rem 1.25rem 1.25rem;
 }
 
 .title {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  line-height: 1.4;
 }
 
 .description {
-  font-size: 1rem;
-  color: #aaa;
-  margin-bottom: 1.5rem;
+  font-size: 0.92rem;
+  color: #444;
+  margin-bottom: 1rem;
+  line-height: 1.55;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 /* /components/ProjectCard.module.css */
 

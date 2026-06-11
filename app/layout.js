@@ -31,6 +31,16 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        {/* Preload critical font to eliminate 503ms critical path delay */}
+        <link
+          rel="preload"
+          href="/fonts/Satoshi-Medium.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body>
         <ClientWrapper>
           <HeaderWrapper/>

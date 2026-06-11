@@ -13,22 +13,34 @@ const tagColorMap = {
   'JavaScript': styles.orange,
   'FOSS': styles.pink,
   'CSS': styles.pink,
-  // Add any other technologies and their desired colors
+  'Python': styles.blue,
+  'TensorFlow': styles.orange,
+  'FastAPI': styles.green,
+  'PostgreSQL': styles.blue,
+  'PyQt5': styles.purple,
+  'ALNS': styles.purple,
+  'Raspberry Pi': styles.orange,
+  'Strapi CMS': styles.pink,
+  'Redis': styles.orange,
 };
 
 // Renamed component to be more descriptive
 export default function ProjectCard({ title, description, image, tags, link, spanFull }) {
   // Use a different class if the card should span the full width
   const cardClass = spanFull ? `${styles.card} ${styles.spanFull}` : styles.card;
+  const imageContainerClass = spanFull
+    ? `${styles.imageContainer} ${styles.imageContainerFeatured}`
+    : styles.imageContainer;
 
   return (
     <a href={link} target="_blank" rel="noopener noreferrer" className={cardClass}>
-      <div id="projects"className={styles.imageContainer}>
+      <div id="projects" className={imageContainerClass}>
         <Image
           src={image}
           alt={`${title} screenshot`}
           fill
-          sizes={spanFull ? '100vw' : '(max-width: 768px) 100vw, 50vw'}
+          sizes={spanFull ? '(max-width: 768px) 100vw, 90vw' : '(max-width: 768px) 100vw, (max-width: 1400px) 45vw, 600px'}
+          quality={75}
           style={{ objectFit: 'cover' }}
           className={styles.projectImage}
         />
