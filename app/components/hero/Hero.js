@@ -9,7 +9,7 @@ export default function Hero() {
   // --- THIS FUNCTION IS THE ONLY CHANGE ---
   // It now uses window.open to open the PDF in a new tab
   const handleOpenResume = () => {
-    window.open('docs/CV.pdf', '_blank');
+    window.open('docs/DurgeshAP_CV.pdf', '_blank');
   };
 
   useEffect(() => {
