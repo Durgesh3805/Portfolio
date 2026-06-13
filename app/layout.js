@@ -2,7 +2,7 @@ import "./globals.css";
 import ClientWrapper from "./components/ClientWrapper";
 import HeaderWrapper from './header/HeaderWrapper';
 
-const SITE_URL = "https://durgeshap.vercel.app";
+const SITE_URL = "https://durgeshap.dev";
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),

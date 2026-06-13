@@ -1,4 +1,4 @@
-const SITE_URL = "https://durgeshap.vercel.app";
+const SITE_URL = "https://durgeshap.dev";
 
 export default function sitemap() {
   return [

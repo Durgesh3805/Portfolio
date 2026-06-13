@@ -3,7 +3,7 @@ import About from './components/about/About';
 import ProjectsSection from './components/projects/ProjectsSection';
 import Footer from './components/footer/Footer';
 
-const SITE_URL = "https://durgeshap.vercel.app";
+const SITE_URL = "https://durgeshap.dev";
 
 export const metadata = {
   alternates: {

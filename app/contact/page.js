@@ -2,7 +2,7 @@
 
 import Contact from '../components/contact/Contact';
 
-const SITE_URL = "https://durgeshap.vercel.app";
+const SITE_URL = "https://durgeshap.dev";
 
 export const metadata = {
   title: "Contact — Durgesh A P",
