@@ -6,11 +6,6 @@ import styles from './Hero.module.css';
 export default function Hero() {
   const animatedOnScrollRef = useRef([]);
 
-  // --- THIS FUNCTION IS THE ONLY CHANGE ---
-  // It now uses window.open to open the PDF in a new tab
-  const handleOpenResume = () => {
-    window.open('docs/DurgeshAP_CV.pdf', '_blank');
-  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -66,11 +61,16 @@ export default function Hero() {
           className={`${styles.buttonsContainer} ${styles.hidden} ${styles.delay4}`}
           ref={(el) => animatedOnScrollRef.current[2] = el}
         >
-          {/* Now this button will open the resume in a new tab */}
-          <button className={styles.primaryButton} onClick={handleOpenResume}>
+          {/* Anchor tags instead of buttons — crawlable links, no redirect hops */}
+          <a
+            href="/docs/DurgeshAP_CV.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.primaryButton}
+          >
             See the Receipts
-          </button>
-          <button className={styles.secondaryButton}>Explore the Builds</button>
+          </a>
+          <a href="/#projects" className={styles.secondaryButton}>Explore the Builds</a>
         </div>
         
         <div 

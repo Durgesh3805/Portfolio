@@ -6,7 +6,7 @@ export const projects = [
       'A hybrid multimodal AI system fusing RGB, infrared, acoustic, and capacitive sensor data to classify 5 mineral types non-destructively. Built with an ensemble CNN + Vision Transformer, fuzzy logic uncertainty layer, and a real-time Next.js dashboard deployed via Raspberry Pi edge-to-cloud pipeline.',
     image: '/imgs/project_ore.png',
     tags: ['Python', 'TensorFlow', 'Next.js', 'Raspberry Pi'],
-    link: '#',
+    link: 'https://github.com/Durgesh3805',
   },
   {
     title: 'Mayonix — Corporate Website (Internship)',
@@ -30,7 +30,7 @@ export const projects = [
       'An automated job aggregation platform that extracts, parses, and intelligently filters real-time postings from dynamic career sites using Scrapy and Selenium pipelines, with a Next.js frontend and PostgreSQL backend.',
     image: '/imgs/project_jobs.png',
     tags: ['Next.js', 'Python', 'PostgreSQL'],
-    link: '#',
+    link: 'https://github.com/Durgesh3805',
   },
 ];
 

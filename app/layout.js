@@ -45,7 +45,10 @@ export const metadata = {
   publisher: "Durgesh A P",
 
   alternates: {
-    canonical: SITE_URL,
+    canonical: `${SITE_URL}/`,
+    languages: {
+      "en-IN": `${SITE_URL}/`,
+    },
   },
 
   openGraph: {

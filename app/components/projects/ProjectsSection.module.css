@@ -11,7 +11,7 @@
 }
 
 .subtitle {
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 620;
   color: #000;
   margin-bottom: 0.5rem;
@@ -37,7 +37,6 @@
   .projectsGrid {
     grid-template-columns: 1fr;
   }
-
   .projectsSection {
     padding: 0 2rem;
   }
